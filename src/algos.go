@@ -5,7 +5,8 @@ import "fmt"
 func main() {
 	// fmt.Print(buildArray([]int{0, 1, 2, 3, 4, 5}))
 	// fmt.Print(getConcatenation([]int{0, 1, 2, 3, 4, 5}))
-	fmt.Print(runningSum([]int{0, 1, 1, 1, 1, 1}))
+	// fmt.Print(runningSum([]int{0, 1, 1, 1, 1, 1}))
+	fmt.Print(maximumWealth([][]int{{1, 2, 3}, {3, 2, 1}}))
 }
 
 func buildArray(nums []int) []int {
@@ -42,4 +43,24 @@ func runningSum(nums []int) []int {
 		slice[i] = nums[i] + slice[i-1]
 	}
 	return slice
+}
+
+func maximumWealth(accounts [][]int) int {
+
+	var sizeOfAccounts = len(accounts)
+
+	var res = 0
+
+	for i := 0; i < sizeOfAccounts; i++ {
+		var sizeOfAccount = len(accounts[i])
+		var accountSum = 0
+		for j := 0; j < sizeOfAccount; j++ {
+			accountSum = accountSum + accounts[i][j]
+		}
+
+		if res < accountSum {
+			res = accountSum
+		}
+	}
+	return res
 }
