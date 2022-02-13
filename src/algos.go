@@ -1,12 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
 	// fmt.Print(buildArray([]int{0, 1, 2, 3, 4, 5}))
 	// fmt.Print(getConcatenation([]int{0, 1, 2, 3, 4, 5}))
 	// fmt.Print(runningSum([]int{0, 1, 1, 1, 1, 1}))
-	fmt.Print(maximumWealth([][]int{{1, 2, 3}, {3, 2, 1}}))
+	// fmt.Print(maximumWealth([][]int{{1, 2, 3}, {3, 2, 1}}))
+	fmt.Print(finalValueAfterOperations([]string{"--X", "X++", "X++"}))
 }
 
 func buildArray(nums []int) []int {
@@ -63,4 +67,25 @@ func maximumWealth(accounts [][]int) int {
 		}
 	}
 	return res
+}
+
+func finalValueAfterOperations(operations []string) int {
+
+	var sizeOfArray = len(operations)
+	var result = 0
+
+	var add, _ = regexp.Compile(`\+`)
+
+	for i := 0; i < sizeOfArray; i++ {
+		var value = operations[i]
+		if add.MatchString(value) {
+			result++
+			continue
+		} else {
+			result--
+			continue
+		}
+
+	}
+	return result
 }
