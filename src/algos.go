@@ -11,7 +11,10 @@ func main() {
 	// fmt.Print(getConcatenation([]int{0, 1, 2, 3, 4, 5}))
 	// fmt.Print(runningSum([]int{0, 1, 1, 1, 1, 1}))
 	// fmt.Print(maximumWealth([][]int{{1, 2, 3}, {3, 2, 1}}))
-	fmt.Print(finalValueAfterOperations([]string{"--X", "X++", "X++"}))
+	// fmt.Print(finalValueAfterOperations([]string{"--X", "X++", "X++"}))
+	// fmt.Print(mostWordsFound([]string{"alice and bob love leetcode", "i think so too", "this is great thanks very much"}))
+	fmt.Print(defangIPaddr("1.1.1.1"))
+
 }
 
 func buildArray(nums []int) []int {
@@ -106,4 +109,8 @@ func mostWordsFound(sentences []string) int {
 		}
 	}
 	return largestWordCount
+}
+
+func defangIPaddr(address string) string {
+	return strings.Replace(address, ".", "[.]", -1)
 }
