@@ -13,7 +13,8 @@ func main() {
 	// fmt.Print(maximumWealth([][]int{{1, 2, 3}, {3, 2, 1}}))
 	// fmt.Print(finalValueAfterOperations([]string{"--X", "X++", "X++"}))
 	// fmt.Print(mostWordsFound([]string{"alice and bob love leetcode", "i think so too", "this is great thanks very much"}))
-	fmt.Print(defangIPaddr("1.1.1.1"))
+	// fmt.Print(defangIPaddr("1.1.1.1"))
+	fmt.Print(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
 
 }
 
@@ -113,4 +114,21 @@ func mostWordsFound(sentences []string) int {
 
 func defangIPaddr(address string) string {
 	return strings.Replace(address, ".", "[.]", -1)
+}
+
+func shuffle(nums []int, n int) []int {
+
+	sizeOfArray := len(nums)
+
+	result := make([]int, sizeOfArray)
+
+	j := 0
+
+	for i := 0; i < (sizeOfArray / 2); i++ {
+		result[j] = nums[i]
+		result[j+1] = nums[i+n]
+		j = j + 2
+	}
+
+	return result
 }
