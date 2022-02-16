@@ -14,7 +14,8 @@ func main() {
 	// fmt.Print(finalValueAfterOperations([]string{"--X", "X++", "X++"}))
 	// fmt.Print(mostWordsFound([]string{"alice and bob love leetcode", "i think so too", "this is great thanks very much"}))
 	// fmt.Print(defangIPaddr("1.1.1.1"))
-	fmt.Print(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
+	// fmt.Print(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
+	fmt.Print(numIdenticalPairs([]int{1, 1, 1, 1}))
 
 }
 
@@ -131,4 +132,19 @@ func shuffle(nums []int, n int) []int {
 	}
 
 	return result
+}
+
+func numIdenticalPairs(nums []int) int {
+
+	sizeOfArray := len(nums)
+
+	count := 0
+	for i := 0; i < sizeOfArray; i++ {
+		for j := i + 1; j < sizeOfArray; j++ {
+			if nums[i] == nums[j] {
+				count++
+			}
+		}
+	}
+	return count
 }
