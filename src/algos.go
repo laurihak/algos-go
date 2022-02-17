@@ -16,7 +16,8 @@ func main() {
 	// fmt.Print(defangIPaddr("1.1.1.1"))
 	// fmt.Print(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
 	// fmt.Print(numIdenticalPairs([]int{1, 1, 1, 1}))
-	fmt.Print(kidsWithCandies([]int{1, 3, 4, 2}, 2))
+	// fmt.Print(kidsWithCandies([]int{1, 3, 4, 2}, 2))
+	fmt.Print(numJewelsInStones("aA", "aAAbbbb"))
 
 }
 
@@ -176,4 +177,20 @@ func max(v []int) int {
 		}
 	}
 	return m
+}
+
+func numJewelsInStones(jewels string, stones string) int {
+
+	jewelsArray := strings.Split(jewels, "")
+	stonesArray := strings.Split(stones, "")
+
+	count := 0
+	for _, v := range stonesArray {
+		for _, v2 := range jewelsArray {
+			if v == v2 {
+				count++
+			}
+		}
+	}
+	return count
 }
