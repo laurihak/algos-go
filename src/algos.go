@@ -15,7 +15,8 @@ func main() {
 	// fmt.Print(mostWordsFound([]string{"alice and bob love leetcode", "i think so too", "this is great thanks very much"}))
 	// fmt.Print(defangIPaddr("1.1.1.1"))
 	// fmt.Print(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
-	fmt.Print(numIdenticalPairs([]int{1, 1, 1, 1}))
+	// fmt.Print(numIdenticalPairs([]int{1, 1, 1, 1}))
+	fmt.Print(kidsWithCandies([]int{1, 3, 4, 2}, 2))
 
 }
 
@@ -147,4 +148,32 @@ func numIdenticalPairs(nums []int) int {
 		}
 	}
 	return count
+}
+
+func kidsWithCandies(candies []int, extraCandies int) []bool {
+
+	sizeOfArray := len(candies)
+
+	maxValue := max(candies)
+
+	result := make([]bool, sizeOfArray)
+
+	for i := 0; i < sizeOfArray; i++ {
+		if candies[i]+extraCandies >= maxValue {
+			result[i] = true
+			continue
+		}
+		result[i] = false
+	}
+	return result
+}
+
+func max(v []int) int {
+	m := 0
+	for i, e := range v {
+		if i == 0 || e > m {
+			m = e
+		}
+	}
+	return m
 }
