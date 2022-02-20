@@ -17,7 +17,8 @@ func main() {
 	// fmt.Print(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
 	// fmt.Print(numIdenticalPairs([]int{1, 1, 1, 1}))
 	// fmt.Print(kidsWithCandies([]int{1, 3, 4, 2}, 2))
-	fmt.Print(numJewelsInStones("aA", "aAAbbbb"))
+	// fmt.Print(numJewelsInStones("aA", "aAAbbbb"))
+	fmt.Print(twoSum([]int{3, 2, 4}, 6))
 
 }
 
@@ -193,4 +194,21 @@ func numJewelsInStones(jewels string, stones string) int {
 		}
 	}
 	return count
+}
+
+func twoSum(nums []int, target int) []int {
+	sizeOfArray := len(nums)
+
+	valueIndexMap := make(map[int]int)
+
+	for i := 0; i < sizeOfArray; i++ {
+		valueToFind := target - nums[i]
+		value, found := valueIndexMap[valueToFind]
+
+		if found && i != value {
+			return []int{i, value}
+		}
+		valueIndexMap[nums[i]] = i
+	}
+	return []int{}
 }
