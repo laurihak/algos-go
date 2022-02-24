@@ -15,5 +15,6 @@ func main() {
 	// fmt.Println("kidsWithCandies: ", kidsWithCandies([]int{1, 3, 4, 2}, 2))
 	// fmt.Println("numJewelsInStones: ", numJewelsInStones("aA", "aAAbbbb"))
 	// fmt.Println("twoSum: ", twoSum([]int{3, 2, 4}, 6))
-	fmt.Println("maxProfit: ", maxProfit([]int{7, 6, 4, 3, 2, 1}))
+	// fmt.Println("maxProfit: ", maxProfit([]int{7, 6, 4, 3, 2, 1}))
+	fmt.Println("containsDuplicate: ", containsDuplicate([]int{1, 5, -2, -4, 0}))
 }
