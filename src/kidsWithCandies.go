@@ -17,13 +17,3 @@ func kidsWithCandies(candies []int, extraCandies int) []bool {
 	}
 	return result
 }
-
-func max(v []int) int {
-	m := 0
-	for i, e := range v {
-		if i == 0 || e > m {
-			m = e
-		}
-	}
-	return m
-}
