@@ -17,5 +17,6 @@ func main() {
 	// fmt.Println("twoSum: ", twoSum([]int{3, 2, 4}, 6))
 	// fmt.Println("maxProfit: ", maxProfit([]int{7, 6, 4, 3, 2, 1}))
 	// fmt.Println("containsDuplicate: ", containsDuplicate([]int{1, 5, -2, -4, 0}))
-	fmt.Println("productExceptSelf: ", productExceptSelf([]int{1, 2, 3, 4}))
+	// fmt.Println("productExceptSelf: ", productExceptSelf([]int{1, 2, 3, 4}))
+	fmt.Println("maxSubArray: ", maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 }

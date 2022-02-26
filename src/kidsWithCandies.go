@@ -1,10 +1,12 @@
 package main
 
+import "algos/utils"
+
 func kidsWithCandies(candies []int, extraCandies int) []bool {
 
 	sizeOfArray := len(candies)
 
-	maxValue := max(candies)
+	maxValue := utils.Max(candies)
 
 	result := make([]bool, sizeOfArray)
 
