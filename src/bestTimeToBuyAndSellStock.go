@@ -1,7 +1,5 @@
 package main
 
-const MaxInt = int(^uint(0) >> 1)
-
 func maxProfit(prices []int) int {
 	var lowestPrice int = MaxInt
 	var maxProfit int = 0

@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+const MaxInt = int(^uint(0) >> 1)
+const MinInt = -MaxInt - 1
+
 func main() {
 	// fmt.Println("buildArray: ", buildArray([]int{0, 1, 2, 3, 4, 5}))
 	// fmt.Println("getConcatenation: ", getConcatenation([]int{0, 1, 2, 3, 4, 5}))
